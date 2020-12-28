@@ -6,7 +6,7 @@
 /*   By: chaeekim <chaeekim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 00:31:07 by chaeekim          #+#    #+#             */
-/*   Updated: 2020/12/28 14:01:46 by chaeekim         ###   ########.fr       */
+/*   Updated: 2020/12/28 15:34:17 by chaeekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ int		ft_isspace(char c)
 	return (0);
 }
 
-int    check_over_range(unsigned long long sum, int sign)
+int		check_over_range(unsigned long long sum, int sign)
 {
-    if (sum > LLONG_MAX - 1 && sign == -1)
-        return (0);
-    if (sum > LLONG_MAX && sign == 1)
-        return (-1);
-    return (sum * sign);
+	if (sum > LLONG_MAX - 1 && sign == -1)
+		return (0);
+	if (sum > LLONG_MAX && sign == 1)
+		return (-1);
+	return (sum * sign);
 }
 
 int		ft_atoi(const char *str)

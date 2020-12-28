@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chaeekim <chaeekim@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: chaeekim <chaeekim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/23 15:20:03 by chaeekim          #+#    #+#             */
-/*   Updated: 2020/12/24 22:10:17 by chaeekim         ###   ########.fr       */
+/*   Created: 2020/12/27 19:24:04 by chaeekim          #+#    #+#             */
+/*   Updated: 2020/12/27 19:28:51 by chaeekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isdigit(int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	return ('0' <= c && c <= '9');
+	if (fd < 0)
+		return ;
+	write(fd, &c, 1);
 }

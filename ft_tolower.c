@@ -6,7 +6,7 @@
 /*   By: chaeekim <chaeekim@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 15:39:23 by chaeekim          #+#    #+#             */
-/*   Updated: 2020/12/23 15:41:16 by chaeekim         ###   ########.fr       */
+/*   Updated: 2020/12/24 22:11:20 by chaeekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_isupper(int c)
 {
-	return ('A' >= c && 'Z' <= c);
+	return ('A' <= c && c <= 'Z');
 }
 
 int		ft_tolower(int c)

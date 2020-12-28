@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chaeekim <chaeekim@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: chaeekim <chaeekim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/23 15:20:03 by chaeekim          #+#    #+#             */
-/*   Updated: 2020/12/24 22:10:17 by chaeekim         ###   ########.fr       */
+/*   Created: 2020/12/24 14:41:59 by chaeekim          #+#    #+#             */
+/*   Updated: 2020/12/26 14:29:15 by chaeekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isdigit(int c)
+void		*ft_memmove(void *dst, const void *src, size_t len)
 {
-	return ('0' <= c && c <= '9');
+	size_t	i;
+
+	if (dst == 0 && src == 0)
+		return (0);
+	i = 0;
+	if (dst < src)
+		ft_memcpy(dst, src, len);
+	else
+		while (len--)
+			*(unsigned char *)(dst + len) = *(unsigned char *)(src + len);
+	return (dst);
 }

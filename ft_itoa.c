@@ -6,13 +6,13 @@
 /*   By: chaeekim <chaeekim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 17:15:57 by chaeekim          #+#    #+#             */
-/*   Updated: 2020/12/27 19:08:40 by chaeekim         ###   ########.fr       */
+/*   Updated: 2020/12/29 21:12:02 by chaeekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t			nlen(long long n)
+static size_t	nlen(long long n)
 {
 	size_t		i;
 
@@ -29,7 +29,7 @@ size_t			nlen(long long n)
 	return (i);
 }
 
-void			do_itoa(long long temp, char *str, size_t len)
+static void		do_itoa(long long temp, char *str, size_t len)
 {
 	str[len] = 0;
 	if (temp == 0)

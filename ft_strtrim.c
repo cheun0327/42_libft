@@ -6,15 +6,15 @@
 /*   By: chaeekim <chaeekim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 20:16:23 by chaeekim          #+#    #+#             */
-/*   Updated: 2020/12/28 15:13:36 by chaeekim         ###   ########.fr       */
+/*   Updated: 2020/12/29 21:36:45 by chaeekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_start(char const *s1, char const *set, size_t slen)
+static size_t	ft_start(char const *s1, char const *set, size_t slen)
 {
-	size_t	i;
+	size_t		i;
 
 	i = 0;
 	while (i < slen && ft_strchr(set, s1[i]))
@@ -22,9 +22,9 @@ size_t		ft_start(char const *s1, char const *set, size_t slen)
 	return (i);
 }
 
-size_t		ft_end(char const *s1, char const *set, size_t slen)
+static size_t	ft_end(char const *s1, char const *set, size_t slen)
 {
-	size_t	i;
+	size_t		i;
 
 	i = 0;
 	while (i < slen && ft_strchr(set, s1[slen - i - 1]))
@@ -32,7 +32,7 @@ size_t		ft_end(char const *s1, char const *set, size_t slen)
 	return (slen - i);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char			*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
 	size_t	slen;
@@ -50,7 +50,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 	end = ft_end(s1, set, slen);
 	if (start >= end)
 		return (ft_strdup(""));
-	if (!(str = (char *)malloc(sizeof(char) * (end - start - 1))))
+	if (!(str = (char *)malloc(sizeof(char) * (end - start + 1))))
 		return (0);
 	ft_strlcpy(str, s1 + start, end - start + 1);
 	return (str);

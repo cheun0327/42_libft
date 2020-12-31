@@ -6,14 +6,14 @@
 /*   By: chaeekim <chaeekim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 00:31:07 by chaeekim          #+#    #+#             */
-/*   Updated: 2020/12/28 15:34:17 by chaeekim         ###   ########.fr       */
+/*   Updated: 2020/12/29 21:41:45 by chaeekim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <limits.h>
 
-int		ft_isspace(char c)
+static int		ft_isspace(char c)
 {
 	if (c == ' ' || c == '\n' || c == '\t' || c == '\v'
 			|| c == '\f' || c == '\r')
@@ -21,7 +21,7 @@ int		ft_isspace(char c)
 	return (0);
 }
 
-int		check_over_range(unsigned long long sum, int sign)
+static int		check_over_range(unsigned long long sum, int sign)
 {
 	if (sum > LLONG_MAX - 1 && sign == -1)
 		return (0);
@@ -30,7 +30,7 @@ int		check_over_range(unsigned long long sum, int sign)
 	return (sum * sign);
 }
 
-int		ft_atoi(const char *str)
+int				ft_atoi(const char *str)
 {
 	long long	nbr;
 	int			sign;

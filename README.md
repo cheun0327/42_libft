@@ -1,6 +1,9 @@
 # 42_libft
 > 흔히 사용하는 C언어 함수들을 재구현 해 나만의 C라이브러리 만들기.
 
+Makefile & Norminette
+Tester : libft-unite-test & libft-war-machine
+
 - part 1</br>
 memset • bzero • memcpy • memccpy • memmove • memchr • memcmp • strlen • strlcpy • strlcat • strchr • strrchr • strnstr • strncmp • atoi • isalpha • isdigit • isalnum • isascii • isprint • toupper • tolower • calloc • strdup
 
